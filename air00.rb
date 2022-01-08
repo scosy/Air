@@ -9,9 +9,9 @@ def only_numbers(array)
   are_numbers
 end
 
-def string_to_array(string)
+def string_to_array(string, separator)
   array = []
-  string.each_line(' ') { |c| array << c.chomp(' ')}
+  string.each_line(' ') { |c| array << c.chomp(separator)}
   array
 end
 # Gestion d'erreurs
@@ -19,7 +19,7 @@ end
 (puts "error"; exit) if only_numbers(ARGV)
 
 # Résolution
-split = string_to_array(ARGV[0])
+split = string_to_array(ARGV[0], ' ')
 
 # Affichage 
 puts split
