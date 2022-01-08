@@ -2,8 +2,11 @@
 # (séparateurs : espaces, tabulations, retours à la ligne).
 
 # Fonctions utilisées
-def is_numeric(string)
-  string.match?(/[0-9]/)
+def only_numbers(array)
+  are_numbers = true
+  count = 0
+  array.each { |c| (c.count("0-9\\-0-\\-9") == c.size) ? () : (are_numbers = false; break) }
+  are_numbers
 end
 
 def string_to_array(string)
@@ -13,7 +16,7 @@ def string_to_array(string)
 end
 # Gestion d'erreurs
 (puts "error"; exit) if ARGV.length != 1
-(puts "error"; exit) if is_numeric(ARGV[0])
+(puts "error"; exit) if only_numbers(ARGV)
 
 # Résolution
 split = string_to_array(ARGV[0])
