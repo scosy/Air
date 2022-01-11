@@ -6,7 +6,7 @@ file.split(".").size == 2
 end
 
 def access_file(file)
-  File.foreach(file) { |line| return line } 
+  File.foreach(file) { |line| puts line } 
 end
 
 # Gestion d'erreurs
