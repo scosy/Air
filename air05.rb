@@ -12,7 +12,7 @@ end
 def calculation(list, operation)
   operator = operation.split("")
   list.map! { |number| number.method(operator[0]).call(operator[1].to_i)}
-  list
+  list.join(" ")
 end
 
 # Gestion d'erreurs
