@@ -18,9 +18,9 @@ end
 def delete_by_string(array, string)
   new_array = []
   (array.size - 1).downto(0) do |index|
-    array[index].include?(string) || array[index].include?(string.upcase) ? () : (new_array << array[index])
+    array[index].include?(string) || array[index].include?(string.upcase) ? () : (new_array[index] = array[index])
   end
-  new_array.join(", ")
+  new_array.compact.join(", ")
 end
 
 # Gestion d'erreurs
